@@ -1,0 +1,268 @@
+body {
+  color: #2d033b;
+  font-family: "Roboto Mono", monospace;
+}
+
+h1 {
+  font-weight: 400;
+  margin-left: 10%;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+p.center {
+  background: #ffffff;
+  position: absolute;
+  text-align: center;
+  font-size: 11.5px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 140px;
+  height: 140px;
+  margin: auto;
+  border-radius: 50%;
+  line-height: 35px;
+  padding: 10% 0 0;
+}
+.temperaturecelsius {
+  text-decoration: none;
+  margin-left: 5%;
+}
+
+.temperaturefahrenheit {
+  text-decoration: none;
+  margin-left: -5%;
+}
+
+.btn {
+  color: #ffffff;
+  background-color: #bd83ce;
+  border-color: #bd83ce;
+  transition: all 100ms ease-in-out;
+  border: 2px solid #bd83ce;
+}
+
+.btn:hover {
+  background: #ffffff;
+  color: #bd83ce;
+  border-color: #bd83ce;
+}
+.bton {
+  color: #bd83ce;
+  background-color: #ffffff;
+  border-color: #bd83ce;
+  transition: all 100ms ease-in-out;
+  border: 2px solid #bd83ce;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.bton:hover {
+  background: #bd83ce;
+  color: #ffffff;
+  border-color: #bd83ce;
+}
+.border-success {
+  text-decoration: none;
+}
+
+.carousel-item img {
+  width: 900px;
+  height: 300px;
+  margin-top: 20px 0 0 30px;
+}
+
+.card-img {
+  width: 250px;
+  height: 150px;
+  margin-top: 0 auto;
+}
+.text-bg-dark {
+  width: 250px;
+  height: 150px;
+  margin: 0 -5% 10%;
+}
+.container {
+  border: 3px solid rgb(189, 131, 206);
+  padding: 30px;
+  margin-top: 20px;
+  background: rgba(246, 229, 245, 0.3);
+}
+
+.weather-variables {
+  margin: 0 0 25% 5%;
+  word-spacing: 0.15cm;
+  font-size: 18px;
+}
+
+.circleemoji {
+  font-size: 100px;
+  margin: 0 0 20% -5%;
+  text-align: center;
+}
+
+.label {
+  font-size: 23px;
+  font-weight: 300;
+  margin: 0 0 -3% 5%;
+  color: #2d033b;
+}
+.date-time {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 -1% 5%;
+}
+.weather-description {
+  font-size: 15px;
+  margin: 0 0 5% 5%;
+  color: #2d033b;
+}
+.borderemoji {
+  margin-top: -5%;
+}
+.bordertext {
+  margin-top: -5%;
+}
+.card-title {
+  font-size: 15px;
+  background: rgba(45, 3, 59, 0.5);
+}
+.border-secondary {
+  border-width: 30px;
+}
+.mon-fri {
+  font-size: 18px;
+  margin-left: 30px;
+}
+.mondaytab {
+  border-style: groove;
+  text-align: center;
+  padding: 20px 0 20px 0;
+  max-width: 15%;
+  margin-right: 5%;
+  border-color: #e5b0ea;
+}
+.tuesdaytab {
+  border-style: groove;
+  text-align: center;
+  padding: 20px 0 20px 0;
+  max-width: 15%;
+  margin-right: 5%;
+  border-color: #e5b0ea;
+}
+.wednesdaytab {
+  border-style: groove;
+  text-align: center;
+  padding: 20px 0 20px 0;
+  max-width: 15%;
+  margin-right: 5%;
+  border-color: #e5b0ea;
+}
+.thursdaytab {
+  border-style: groove;
+  text-align: center;
+  padding: 20px 0 20px 0;
+  max-width: 15%;
+  margin-right: 5%;
+  border-color: #e5b0ea;
+}
+.fridaytab {
+  border-style: groove;
+  text-align: center;
+  padding: 20px 0 20px 0;
+  max-width: 15%;
+  margin-right: 5%;
+  border-color: #e5b0ea;
+}
+
+.donut-chart {
+  position: relative;
+  width: 165px;
+  height: 165px;
+  margin: 0 0px 0 -10px;
+}
+
+.portion-block {
+  border-radius: 50%;
+  clip: rect(0px, 200px, 200px, 100px);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.circle {
+  border-radius: 50%;
+  clip: rect(0px, 100px, 200px, 0px);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+#part1 {
+  transform: rotate(0deg);
+}
+
+#part1 .circle {
+  background-color: #f1c6e7;
+
+  animation: first 100ms 1 forwards;
+}
+
+#part2 {
+  transform: rotate(100deg);
+}
+#part2 .circle {
+  background-color: #e5b0ea;
+  animation: second 100ms 1 forwards 100ms;
+}
+#part3 {
+  transform: rotate(250deg);
+}
+#part3 .circle {
+  background-color: #bd83ce;
+  animation: third 50ms 1 forwards 200ms;
+}
+.container .chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+}
+
+.donut-chart-block {
+  flex: 1;
+  text-align: center;
+  margin: 10px 6px;
+}
+
+@keyframes first {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(100deg);
+  }
+}
+
+@keyframes second {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(150deg);
+  }
+}
+
+@keyframes third {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(111deg);
+  }
+}
