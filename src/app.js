@@ -50,7 +50,7 @@ temperatureC.addEventListener("click", function () {
 });
 
 function displayWeatherData(response) {
-  let temperature = response.data.main.temp;
+  let temperature = Math.round(response.data.main.temp);
   let cityName = response.data.name;
 
   let temperatureDisplay = document.querySelector("h1");
@@ -80,7 +80,7 @@ function showPosition(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
 
   axios.get(apiUrl).then(function (response) {
-    let temperature = response.data.main.temp;
+    let temperature = Math.round(response.data.main.temp);
     let cityName = response.data.name;
     alert(`Current temperature in ${cityName}: ${temperature}°C`);
   });
