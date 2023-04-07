@@ -240,6 +240,10 @@ p.center {
   margin: 10px 6px;
 }
 
+.repository {
+  
+}
+
 @keyframes first {
   from {
     transform: rotate(0deg);
