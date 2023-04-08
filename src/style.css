@@ -54,21 +54,7 @@ p.center {
   color: #bd83ce;
   border-color: #bd83ce;
 }
-.bton {
-  color: #bd83ce;
-  background-color: #ffffff;
-  border-color: #bd83ce;
-  transition: all 100ms ease-in-out;
-  border: 2px solid #bd83ce;
-  border-radius: 10px;
-  margin-left: 10px;
-}
 
-.bton:hover {
-  background: #bd83ce;
-  color: #ffffff;
-  border-color: #bd83ce;
-}
 .border-success {
   text-decoration: none;
 }
@@ -121,10 +107,18 @@ p.center {
   font-size: 18px;
 }
 
-.circleemoji {
-  font-size: 100px;
-  margin: 0 0 20% -5%;
+#weathericon {
+  font-size: 250px;
+  margin: 0 0 20% 25%;
   text-align: center;
+}
+#circleicon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid white;
+  margin: 0 0 20% 3%;
 }
 
 .label {
