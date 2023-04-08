@@ -4,12 +4,14 @@ body {
 }
 
 h1 {
+  font-size: 60px;
   font-weight: 400;
-  margin-left: 10%;
+  margin-left: 2%;
 }
 
 h2 {
   font-weight: 300;
+  margin-top: -32px;
   font-size: 20px;
 }
 
@@ -71,31 +73,50 @@ p.center {
   text-decoration: none;
 }
 
-.carousel-item img {
+.rounded-pill {
   width: 900px;
   height: 300px;
   margin-top: 20px 0 0 30px;
 }
 
-.card-img {
-  width: 250px;
-  height: 150px;
-  margin-top: 0 auto;
-}
 .text-bg-dark {
   width: 250px;
-  height: 150px;
+  height: 50px;
   margin: 0 -5% 10%;
 }
+.card.text-bg-dark {
+  background-color: rgba(189, 131, 206, 0.1) !important;
+  border-color: rgba(189, 131, 206, 0);
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .container {
   border: 3px solid rgb(189, 131, 206);
   padding: 30px;
   margin-top: 20px;
   background: rgba(246, 229, 245, 0.3);
 }
+.weather-app-wrapper {
+  max-width: 1250px;
+  height: 900px;
+}
 
-.weather-variables {
-  margin: 0 0 25% 5%;
+#precipitation {
+  margin: 0 0 5% 5%;
+  word-spacing: 0.15cm;
+  font-size: 18px;
+}
+#humidity {
+  margin: 0 0 5% 5%;
+  word-spacing: 0.15cm;
+  font-size: 18px;
+}
+#wind {
+  margin: 0 0 5% 5%;
   word-spacing: 0.15cm;
   font-size: 18px;
 }
@@ -112,6 +133,11 @@ p.center {
   margin: 0 0 -3% 5%;
   color: #2d033b;
 }
+.city-name {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 -1% 5%;
+}
 .date-time {
   font-size: 18px;
   font-weight: 600;
@@ -121,6 +147,7 @@ p.center {
   font-size: 15px;
   margin: 0 0 5% 5%;
   color: #2d033b;
+  text-transform: capitalize;
 }
 .borderemoji {
   margin-top: -5%;
@@ -134,6 +161,9 @@ p.center {
 }
 .border-secondary {
   border-width: 30px;
+}
+.repository {
+  margin-left: 100px;
 }
 .mon-fri {
   font-size: 18px;

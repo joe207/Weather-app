@@ -27,11 +27,11 @@ function searchButton(event) {
 let form = document.querySelector(".d-flex");
 form.addEventListener("submit", searchButton);
 
-let temperatureCelsius = 0;
+let temperatureCelsius = 17;
 let temperatureDisplay = document.querySelector("h1");
 
 function temperatureChange() {
-  temperatureDisplay.innerHTML = convertToFahrenheit(temperatureCelsius) + "°F";
+  temperatureDisplay.innerHTML = convertToFahrenheit(temperatureCelsius);
 }
 
 function convertToCelsius(temperature) {
@@ -39,14 +39,14 @@ function convertToCelsius(temperature) {
 }
 
 function convertToFahrenheit(temperature) {
-  return (temperature * 9) / 5 + 32;
+  return Math.round(temperature * 9) / 5 + 32;
 }
 
 let temperatureC = document.querySelector(".temperaturecelsius");
 let temperatureF = document.querySelector(".temperaturefahrenheit");
 temperatureF.addEventListener("click", temperatureChange);
 temperatureC.addEventListener("click", function () {
-  temperatureDisplay.innerHTML = temperatureCelsius + "°C";
+  temperatureDisplay.innerHTML = temperatureCelsius;
 });
 
 function displayWeatherData(response) {
@@ -55,9 +55,17 @@ function displayWeatherData(response) {
 
   let temperatureDisplay = document.querySelector("h1");
   let cityNameDisplay = document.querySelector(".city-name");
+  let description = document.querySelector(".weather-description");
+  let humidity = document.querySelector("#humidity");
+  let wind = document.querySelector("#wind");
+  let precipitation = document.querySelector("#precipitation");
 
-  temperatureDisplay.innerHTML = `${temperature.toFixed(1)}°C`;
+  temperatureDisplay.innerHTML = `${temperature}`;
   cityNameDisplay.innerHTML = cityName;
+  description.innerHTML = response.data.weather[0].description;
+  humidity.innerHTML = response.data.main.humidity;
+  wind.innerHTML = Math.round(response.data.wind.speed);
+  precipitation.innerHTML = response.data.precipitation.value;
 }
 
 function getWeatherData(city) {
@@ -92,10 +100,3 @@ function getCurrentPosition() {
 
 let locationButton = document.querySelector(".bton");
 locationButton.addEventListener("click", getCurrentPosition);
-
-function getCityImages(images) {
-  let apiKey = `AIzaSyCFshgR-SbNU3evKlojV1Fsvluzs2FrX2U`;
-  let apiUrl = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Chicago,IL&key=${apiKey}&inputtype=textquery&fields=name,photos`;
-  console.log(images);
-  axios.get(apiUrl).then();
-}
