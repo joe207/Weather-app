@@ -88,7 +88,10 @@ p.center {
 }
 .weather-app-wrapper {
   max-width: 1250px;
-  height: 900px;
+  height: 700px;
+}
+.col-wrapper {
+  height: 630px;
 }
 
 #precipitation {
@@ -111,14 +114,6 @@ p.center {
   font-size: 250px;
   margin: 0 0 20% 25%;
   text-align: center;
-}
-#circleicon {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: white;
-  border: 1px solid white;
-  margin: 0 0 20% 3%;
 }
 
 .label {
