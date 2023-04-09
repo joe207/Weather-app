@@ -44,6 +44,15 @@ function displayWeatherData(response) {
   dateTime.innerHTML = formatDate(response.data.time * 1000);
   weatherIcon.src = response.data.condition.icon_url;
 }
+let defaultCity = "Lisbon";
+
+function search(city) {
+  let apiKey = "ef8052b94656b6atac9cfoe91360155a";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  axios.get(apiUrl).then(displayWeatherData);
+}
+
+search(defaultCity);
 
 function getWeatherData(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=ef8052b94656b6atac9cfoe91360155a&units=metric`;
