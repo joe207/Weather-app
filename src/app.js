@@ -35,6 +35,7 @@ function displayWeatherData(response) {
   let wind = document.querySelector("#wind");
   let dateTime = document.querySelector(".date-time");
   let weatherIcon = document.querySelector("#weathericon");
+  let cityImages = document.querySelector("#cityimages");
 
   temperatureDisplay.innerHTML = `${temperature}`;
   cityNameDisplay.innerHTML = cityName;
@@ -57,11 +58,33 @@ search(defaultCity);
 function getWeatherData(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=ef8052b94656b6atac9cfoe91360155a&units=metric`;
 
-  axios.get(apiUrl).then(displayWeatherData);
+  axios.get(apiUrl).then((response) => {
+    displayWeatherData(response);
+    getPhoto(city);
+  });
 }
 
 let button = document.querySelector(".btn");
-button.addEventListener("click", function () {
+button.addEventListener("click", function (event) {
+  event.preventDefault();
   let cityInput = document.querySelector("#search-form").value;
   getWeatherData(cityInput);
 });
+
+function getCityPhoto(city) {
+  const accessKey = "JZ39qbuaPz_ARiywLmlBbngqBCVSccJE2lJBHesySCY";
+  const apiUrl = `https://api.unsplash.com/photos/random?query=${city}&client_id=${accessKey}`;
+
+  axios
+    .get(apiUrl)
+    .then((response) => {
+      const photoUrl = response.data.urls.regular;
+      const cityImage = document.getElementById("cityimages");
+      cityImage.src = photoUrl;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+getCityPhoto("New York");

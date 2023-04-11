@@ -6,7 +6,7 @@ body {
 h1 {
   font-size: 60px;
   font-weight: 400;
-  margin-left: 2%;
+  margin-left: 0%;
 }
 
 h2 {
@@ -59,10 +59,10 @@ p.center {
   text-decoration: none;
 }
 
-.rounded-pill {
+#cityimages {
   width: 900px;
   height: 300px;
-  margin-top: 20px 0 0 30px;
+  margin: 20px 0 0 30px;
 }
 
 .text-bg-dark {
@@ -91,29 +91,51 @@ p.center {
   height: 730px;
 }
 .col-wrapper {
-  height: 630px;
+  height: 650px;
 }
 
 #precipitation {
-  margin: 0 0 5% 5%;
+  margin: 0 0 5% 0%;
   word-spacing: 0.15cm;
   font-size: 18px;
 }
 #humidity {
-  margin: 0 0 5% 5%;
+  margin: 0 0 5% 0%;
   word-spacing: 0.15cm;
   font-size: 18px;
 }
 #wind {
-  margin: 0 0 5% 5%;
+  margin: 0 0 5% 0%;
   word-spacing: 0.15cm;
   font-size: 18px;
 }
+.humidity {
+  margin: 0 0 5% 0%;
+}
+.wind {
+  margin: 0 0 5% 0%;
+}
+.today-weather .icon-circle {
+  position: absolute;
+  background-color: #bd83ce;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  left: 220px;
+  z-index: -1;
+}
 
-#weathericon {
-  font-size: 10px;
-  margin: 0 0 20% 15%;
-  text-align: center;
+.today-weather {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-bottom: 20%;
+}
+
+.today-weather .weather-icon {
+  width: 120px;
+  height: 120px;
+  z-index: 1;
 }
 
 .label {
@@ -125,16 +147,16 @@ p.center {
 .city-name {
   font-size: 28px;
   font-weight: 600;
-  margin: 0 0 -1% 5%;
+  margin: 0 0 -1% 0%;
 }
 .date-time {
   font-size: 18px;
   font-weight: 600;
-  margin: 0 0 -1% 5%;
+  margin: 0 0 -1% 0%;
 }
 .weather-description {
   font-size: 15px;
-  margin: 0 0 5% 5%;
+  margin: 0 0 5% 0%;
   color: #2d033b;
   text-transform: capitalize;
 }
