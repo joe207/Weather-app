@@ -71,20 +71,18 @@ button.addEventListener("click", function (event) {
   getWeatherData(cityInput);
 });
 
-function getCityPhoto(city) {
-  const accessKey = "JZ39qbuaPz_ARiywLmlBbngqBCVSccJE2lJBHesySCY";
-  const apiUrl = `https://api.unsplash.com/photos/random?query=${city}&client_id=${accessKey}`;
+function getPhoto(city) {
+  const unsplashAPIKey = "JZ39qbuaPz_ARiywLmlBbngqBCVSccJE2lJBHesySCY";
+  const query = encodeURIComponent(`${city} city`);
+  const url = `https://api.unsplash.com/photos/random?query=${query}&client_id=${unsplashAPIKey}`;
 
-  axios
-    .get(apiUrl)
-    .then((response) => {
-      const photoUrl = response.data.urls.regular;
-      const cityImage = document.getElementById("cityimages");
-      cityImage.src = photoUrl;
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+  axios.get(url).then((response) => {
+    const imageUrl = response.data.urls.regular;
+    const imageAlt = response.data.alt_description;
+    const imageElement = document.getElementById("cityimages");
+
+    imageElement.setAttribute("src", imageUrl);
+    imageElement.setAttribute("alt", imageAlt);
+  });
 }
-
-getCityPhoto("New York");
+getPhoto("Lisbon");
