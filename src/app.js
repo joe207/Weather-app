@@ -25,7 +25,6 @@ function formatDate(timestamp) {
 }
 
 function displayWeatherData(response) {
-  let temperature = Math.round(response.data.temperature.current);
   let cityName = response.data.city;
 
   let temperatureDisplay = document.querySelector("h1");
@@ -35,9 +34,10 @@ function displayWeatherData(response) {
   let wind = document.querySelector("#wind");
   let dateTime = document.querySelector(".date-time");
   let weatherIcon = document.querySelector("#weathericon");
-  let cityImages = document.querySelector("#cityimages");
 
-  temperatureDisplay.innerHTML = `${temperature}`;
+  temperaturecelsius = Math.round(response.data.temperature.current);
+
+  temperatureDisplay.innerHTML = `${temperaturecelsius}`;
   cityNameDisplay.innerHTML = cityName;
   description.innerHTML = response.data.condition.description;
   humidity.innerHTML = response.data.temperature.humidity;
@@ -86,3 +86,36 @@ function getPhoto(city) {
   });
 }
 getPhoto("Lisbon");
+
+function displayFahrenheit(event) {
+  event.preventDefault();
+
+  celsiuslink.classList.remove("active");
+  fahrenheitlink.classList.add("active");
+
+  let fahrenheit = (temperaturecelsius * 9) / 5 + 32;
+  let temperatureDisplay = document.querySelector("h1");
+  temperatureDisplay.innerHTML = Math.round(fahrenheit);
+}
+
+let temperaturecelsius = null;
+
+let fahrenheitlink = document.querySelector(".temperaturefahrenheit");
+fahrenheitlink.addEventListener("click", function (event) {
+  console.log("Fahrenheit link clicked");
+  displayFahrenheit(event);
+});
+
+function displayCelsius(event) {
+  event.preventDefault();
+  celsiuslink.classList.add("active");
+  fahrenheitlink.classList.remove("active");
+  let temperatureDisplay = document.querySelector("h1");
+  temperatureDisplay.innerHTML = `${temperaturecelsius}`;
+}
+
+let celsiuslink = document.querySelector(".temperaturecelsius");
+celsiuslink.addEventListener("click", function (event) {
+  console.log("Celsius link clicked");
+  displayCelsius(event);
+});
