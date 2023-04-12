@@ -63,6 +63,7 @@ p.center {
   width: 900px;
   height: 300px;
   margin: 20px 0 0 30px;
+  border: 5px solid #bd83ce;
 }
 
 .text-bg-dark {
