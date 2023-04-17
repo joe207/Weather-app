@@ -89,10 +89,10 @@ p.center {
 }
 .weather-app-wrapper {
   max-width: 1250px;
-  height: 730px;
+  height: 830px;
 }
 .col-wrapper {
-  height: 650px;
+  height: 725px;
 }
 
 #precipitation {
@@ -115,15 +115,6 @@ p.center {
 }
 .wind {
   margin: 0 0 5% 0%;
-}
-.today-weather .icon-circle {
-  position: absolute;
-  background-color: #bd83ce;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  left: 220px;
-  z-index: -1;
 }
 
 .today-weather {
@@ -176,50 +167,6 @@ p.center {
 }
 .repository {
   margin-left: 100px;
-}
-.mon-fri {
-  font-size: 18px;
-  margin-left: 30px;
-}
-.mondaytab {
-  border-style: groove;
-  text-align: center;
-  padding: 20px 0 20px 0;
-  max-width: 15%;
-  margin-right: 5%;
-  border-color: #e5b0ea;
-}
-.tuesdaytab {
-  border-style: groove;
-  text-align: center;
-  padding: 20px 0 20px 0;
-  max-width: 15%;
-  margin-right: 5%;
-  border-color: #e5b0ea;
-}
-.wednesdaytab {
-  border-style: groove;
-  text-align: center;
-  padding: 20px 0 20px 0;
-  max-width: 15%;
-  margin-right: 5%;
-  border-color: #e5b0ea;
-}
-.thursdaytab {
-  border-style: groove;
-  text-align: center;
-  padding: 20px 0 20px 0;
-  max-width: 15%;
-  margin-right: 5%;
-  border-color: #e5b0ea;
-}
-.fridaytab {
-  border-style: groove;
-  text-align: center;
-  padding: 20px 0 20px 0;
-  max-width: 15%;
-  margin-right: 5%;
-  border-color: #e5b0ea;
 }
 
 .donut-chart {
@@ -307,4 +254,23 @@ p.center {
   to {
     transform: rotate(111deg);
   }
+}
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: #2d033b;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.5;
+}
+
+.weather-forecast-temperatures {
+  font-size: 13px;
 }

@@ -24,6 +24,53 @@ function formatDate(timestamp) {
   return `${day}, ${hours}:${minutes}`;
 }
 
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector(".weather-forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+    let date = new Date(forecastDay.time * 1000);
+    let day = date.getDay();
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    let icon = forecastDay.condition.icon;
+
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <div class="weather-forecast-date">${days[day]}</div>
+        <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${icon}.png" alt="" width="50" />
+
+
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max"> ${Math.round(forecastDay.temperature.maximum)}°C </span>
+          <span class="weather-forecast-temperature-min"> ${Math.round(forecastDay.temperature.minimum)}°C </span>
+        </div>
+      </div>
+  `;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+
+function getForecast(city) {
+  let apiKey = "ef8052b94656b6atac9cfoe91360155a";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+getForecast("Lisbon");
+
+
+
+
+
 function displayWeatherData(response) {
   let cityName = response.data.city;
 
@@ -44,6 +91,8 @@ function displayWeatherData(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
   dateTime.innerHTML = formatDate(response.data.time * 1000);
   weatherIcon.src = response.data.condition.icon_url;
+
+  getForecast(response.data.coord);
 }
 let defaultCity = "Lisbon";
 
@@ -73,8 +122,9 @@ button.addEventListener("click", function (event) {
 
 function getPhoto(city) {
   const unsplashAPIKey = "JZ39qbuaPz_ARiywLmlBbngqBCVSccJE2lJBHesySCY";
-  const query = encodeURIComponent(`${city} city`);
-  const url = `https://api.unsplash.com/photos/random?query=${query}&client_id=${unsplashAPIKey}`;
+  const query = encodeURIComponent(`${city} city landscape`);
+const url = `https://api.unsplash.com/photos/random?query=${query}&client_id=${unsplashAPIKey}`;
+
 
   axios.get(url).then((response) => {
     const imageUrl = response.data.urls.regular;
